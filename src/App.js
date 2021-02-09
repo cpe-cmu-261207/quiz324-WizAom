@@ -40,7 +40,23 @@ function App() {
           <input className="input" type="number" placeholder="e.q 5"></input>
         </div>
 
-        <button className="button is-danger is-fullwidth">Submit</button>
+        <button
+          className="button is-danger is-fullwidth"
+          onClick={() => {
+            items.map((i) => {
+              return (
+                <ItemTable
+                  name={localStorage.getItem("input")}
+                  gender={localStorage.getItem("label")}
+                  age={localStorage.getItem("gender")}
+                />
+              );
+              localStorage.setItem("name", localStorage.getItem("label"));
+            });
+          }}
+        >
+          Submit
+        </button>
 
         <div className="mb-4"></div>
 
@@ -48,7 +64,7 @@ function App() {
         <p className="is-4 title has-text-centered">Pet List</p>
         {/* sample table */}
         <ItemTable name={"Coco"} gender={"Male"} age={"5"} />
-        <p>Your name and code here</p>
+        <p>Sarinya Pamontree 620610810</p>
       </div>
     </div>
   );
